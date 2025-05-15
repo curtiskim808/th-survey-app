@@ -1,0 +1,52 @@
+module.exports = {
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    colors: {
+      primary: "#4A90E2",
+      secondary: "#50E3C2",
+      accent: "#F5A623",
+      background: "#F7F7F7",
+      text: "#333333",
+      white: "#FFFFFF",
+      black: "#000000",
+    },
+    fontFamily: {
+      sans: ["Helvetica", "Arial", "sans-serif"],
+      serif: ["Georgia", "serif"],
+      mono: ["Courier New", "monospace"],
+    },
+    fontSize: {
+      xs: "0.75rem",
+      sm: "0.875rem",
+      base: "1rem",
+      lg: "1.125rem",
+      xl: "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+    },
+    spacing: {
+      px: "1px",
+      0: "0",
+      0.5: "2px",
+      1: "4px",
+      2: "8px",
+      3: "12px",
+      4: "16px",
+      5: "20px",
+      6: "24px",
+      8: "32px",
+      10: "40px",
+      12: "48px",
+      16: "64px",
+    },
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};

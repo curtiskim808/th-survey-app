@@ -1,0 +1,299 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "survey_responses" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "survey_responses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "today_feeling" text, "stress_level" text, "comments" text, "today_feeling_bidx" varchar, "stress_level_bidx" varchar, "comments_bidx" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "respondent_id" text, "respondent_id_bidx" varchar) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_comments_bidx" ON "survey_responses" ("comments_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_respondent_id_bidx" ON "survey_responses" ("respondent_id_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_stress_level_bidx" ON "survey_responses" ("stress_level_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_today_feeling_bidx" ON "survey_responses" ("today_feeling_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250515013001) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250515012908),
+(20250515010105); /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-15 22:34:15.480008', '2025-05-15 22:34:15.480009') RETURNING "key" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'f7983a4ebdbb8eaf7801f6202de1725d9b7d675f', '2025-05-15 22:34:15.481402', '2025-05-15 22:34:15.481403') RETURNING "key" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:7:in 'block (2 levels) in <main>'
+Started GET "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:34:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+Processing by Api::V1::SurveyResponsesController#index as HTML
+  [1m[36mSurveyResponse Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "survey_responses" /*action='index',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/controllers/api/v1/survey_responses_controller.rb:10:in 'Api::V1::SurveyResponsesController#index'
+  [1m[36mSurveyResponse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "survey_responses" LIMIT 1 /*action='index',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/models/survey_response.rb:25:in 'SurveyResponse.average_stress_level'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 25ms (Views: 1.5ms | ActiveRecord: 2.1ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:34:24 +0000
+Processing by Api::V1::SurveyResponsesController#index as HTML
+  [1m[36mSurveyResponse Count (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "survey_responses" /*action='index',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/controllers/api/v1/survey_responses_controller.rb:10:in 'Api::V1::SurveyResponsesController#index'
+  [1m[36mSurveyResponse Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "survey_responses" LIMIT 1 /*action='index',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/models/survey_response.rb:25:in 'SurveyResponse.average_stress_level'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "survey_responses" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "survey_responses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "today_feeling" text, "stress_level" text, "comments" text, "today_feeling_bidx" varchar, "stress_level_bidx" varchar, "comments_bidx" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "respondent_id" text, "respondent_id_bidx" varchar) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_comments_bidx" ON "survey_responses" ("comments_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_respondent_id_bidx" ON "survey_responses" ("respondent_id_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_stress_level_bidx" ON "survey_responses" ("stress_level_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_today_feeling_bidx" ON "survey_responses" ("today_feeling_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250515013001) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250515012908),
+(20250515010105); /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-15 22:47:32.286283', '2025-05-15 22:47:32.286284') RETURNING "key" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'f7983a4ebdbb8eaf7801f6202de1725d9b7d675f', '2025-05-15 22:47:32.288756', '2025-05-15 22:47:32.288757') RETURNING "key" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:7:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "survey_responses" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "survey_responses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "today_feeling" text, "stress_level" text, "comments" text, "today_feeling_bidx" varchar, "stress_level_bidx" varchar, "comments_bidx" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "respondent_id" text, "respondent_id_bidx" varchar) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_comments_bidx" ON "survey_responses" ("comments_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_respondent_id_bidx" ON "survey_responses" ("respondent_id_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_stress_level_bidx" ON "survey_responses" ("stress_level_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_today_feeling_bidx" ON "survey_responses" ("today_feeling_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250515013001) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250515012908),
+(20250515010105); /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-15 22:50:46.112235', '2025-05-15 22:50:46.112237') RETURNING "key" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'f7983a4ebdbb8eaf7801f6202de1725d9b7d675f', '2025-05-15 22:50:46.114653', '2025-05-15 22:50:46.114654') RETURNING "key" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:7:in 'block (2 levels) in <main>'
+Started GET "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:51:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+Processing by Api::V1::SurveyResponsesController#index as HTML
+  [1m[36mSurveyResponse Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "survey_responses" /*action='index',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/controllers/api/v1/survey_responses_controller.rb:10:in 'Api::V1::SurveyResponsesController#index'
+  [1m[36mSurveyResponse Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "survey_responses" LIMIT 1 /*action='index',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/models/survey_response.rb:25:in 'SurveyResponse.average_stress_level'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 2.0ms)
+
+
+Started POST "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:51:24 +0000
+Processing by Api::V1::SurveyResponsesController#create as HTML
+  Parameters: {"survey_response" => {"today_feeling" => "[FILTERED]", "stress_level" => "[FILTERED]", "comments" => "[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 500 Internal Server Error in 50ms (Views: 0.5ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 14.2ms)
+
+
+Started POST "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:51:26 +0000
+Processing by Api::V1::SurveyResponsesController#create as HTML
+  Parameters: {"survey_response" => {"today_feeling" => "[FILTERED]", "stress_level" => "[FILTERED]", "comments" => "[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 500 Internal Server Error in 28ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started POST "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:51:28 +0000
+Processing by Api::V1::SurveyResponsesController#create as HTML
+  Parameters: {"survey_response" => {"today_feeling" => "[FILTERED]", "stress_level" => "[FILTERED]", "comments" => "[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.02ms)
+Completed 500 Internal Server Error in 21ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:52:09 +0000
+Processing by Api::V1::SurveyResponsesController#create as HTML
+  Parameters: {"survey_response" => {"today_feeling" => "[FILTERED]", "stress_level" => "[FILTERED]", "comments" => "[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 500 Internal Server Error in 28ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:54:15 +0000
+Processing by Api::V1::SurveyResponsesController#create as HTML
+  Parameters: {"survey_response" => {"today_feeling" => "[FILTERED]", "stress_level" => "[FILTERED]", "comments" => "[FILTERED]"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 500 Internal Server Error in 24ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:4:in 'block (2 levels) in <main>'
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "survey_responses" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "survey_responses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "today_feeling" text, "stress_level" text, "comments" text, "today_feeling_bidx" varchar, "stress_level_bidx" varchar, "comments_bidx" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "respondent_id" text, "respondent_id_bidx" varchar) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_comments_bidx" ON "survey_responses" ("comments_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_respondent_id_bidx" ON "survey_responses" ("respondent_id_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_stress_level_bidx" ON "survey_responses" ("stress_level_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_survey_responses_on_today_feeling_bidx" ON "survey_responses" ("today_feeling_bidx") /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250515013001) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250515012908),
+(20250515010105); /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-15 22:54:27.677011', '2025-05-15 22:54:27.677012') RETURNING "key" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'f7983a4ebdbb8eaf7801f6202de1725d9b7d675f', '2025-05-15 22:54:27.678421', '2025-05-15 22:54:27.678422') RETURNING "key" /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:6:in 'block (2 levels) in <main>'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+  ↳ lib/tasks/db.rake:7:in 'block (2 levels) in <main>'
+Started POST "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:54:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MentalHealthSurvey'*/[0m
+Processing by Api::V1::SurveyResponsesController#create as HTML
+  Parameters: {"survey_response" => {"today_feeling" => "[FILTERED]", "stress_level" => "[FILTERED]", "comments" => "[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/controllers/api/v1/survey_responses_controller.rb:22:in 'Api::V1::SurveyResponsesController#create'
+  [1m[36mSurveyResponse Create (3.4ms)[0m  [1m[32mINSERT INTO "survey_responses" ("today_feeling", "stress_level", "comments", "today_feeling_bidx", "stress_level_bidx", "comments_bidx", "created_at", "updated_at", "respondent_id", "respondent_id_bidx") VALUES ('{"p":"FM8=","h":{"iv":"BxcP2an1KzMgskNw","at":"UOTv2zS6KiZM9/NOtmtmxg=="}}', '{"p":"DA==","h":{"iv":"dFeDawrUkF8Bf0J4","at":"ZOypYSPLhxRVQ7u7npE0cA==","e":"VVMtQVNDSUk="}}', '{"p":"","h":{"iv":"imHaJtmQFjdgVRrz","at":"s/AsblQ0PVVjNVDD+k6rig=="}}', 'wdztuZ93MGESQik6F03hCBczKWnK5RgQC0M7jxBqQwk=', 'Z7L40M+Q2ftRp4AZB4uNQceSBjYlD2YTii2PpvwfCFM=', 'jOZ54IQF6aexFXcfgRz+WilV3Us+OJOdlO+6wWGvRXM=', '2025-05-15 22:54:31.770615', '2025-05-15 22:54:31.770615', NULL, NULL) RETURNING "id" /*action='create',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/controllers/api/v1/survey_responses_controller.rb:22:in 'Api::V1::SurveyResponsesController#create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/controllers/api/v1/survey_responses_controller.rb:22:in 'Api::V1::SurveyResponsesController#create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 201 Created in 50ms (Views: 1.1ms | ActiveRecord: 7.4ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/api/v1/survey_responses" for 172.18.0.1 at 2025-05-15 22:54:33 +0000
+Processing by Api::V1::SurveyResponsesController#index as HTML
+  [1m[36mSurveyResponse Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "survey_responses" /*action='index',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/controllers/api/v1/survey_responses_controller.rb:10:in 'Api::V1::SurveyResponsesController#index'
+  [1m[36mSurveyResponse Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "survey_responses" LIMIT 1 /*action='index',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/models/survey_response.rb:25:in 'SurveyResponse.average_stress_level'
+  [1m[36mSurveyResponse Load (0.4ms)[0m  [1m[34mSELECT "survey_responses".* FROM "survey_responses" /*action='index',application='MentalHealthSurvey',controller='survey_responses'*/[0m
+  ↳ app/models/survey_response.rb:26:in 'SurveyResponse.average_stress_level'
+  [1m[36mCACHE SurveyResponse Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "survey_responses"[0m
+  ↳ app/models/survey_response.rb:26:in 'SurveyResponse.average_stress_level'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.7ms (4 queries, 1 cached) | GC: 0.0ms)
+
+

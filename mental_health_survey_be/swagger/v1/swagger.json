@@ -1,0 +1,139 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Survey API Documentation",
+    "version": "v1",
+    "description": "API documentation for Survey Responses"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Development server"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "SurveyResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "today_feeling": {
+            "type": "string"
+          },
+          "stress_level": {
+            "type": "integer"
+          },
+          "comments": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondent_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "today_feeling",
+          "stress_level"
+        ]
+      }
+    }
+  },
+  "paths": {
+    "/api/v1/survey_responses": {
+      "get": {
+        "summary": "Retrieves aggregated survey response data",
+        "tags": [
+          "Survey Responses"
+        ],
+        "responses": {
+          "200": {
+            "description": "survey data retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "total_responses": {
+                          "type": "integer"
+                        },
+                        "average_stress_level": {
+                          "type": "number",
+                          "format": "float"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a survey response",
+        "tags": [
+          "Survey Responses"
+        ],
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "survey response created"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "survey_response": {
+                    "type": "object",
+                    "properties": {
+                      "today_feeling": {
+                        "type": "string"
+                      },
+                      "stress_level": {
+                        "type": "integer"
+                      },
+                      "comments": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "respondent_id": {
+                        "type": "string",
+                        "description": "Identifier for the respondent",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "today_feeling",
+                      "stress_level"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
