@@ -48,6 +48,9 @@ docker-compose up --build
 docker-compose down
 ```
 
+FE: http://localhost:5173/
+BE_API DOC: http://localhost:3000/api-docs
+
 #### How to run Unit Tests
 
 ```bash
