@@ -54,7 +54,31 @@ describe("API Functions", () => {
       expect(mockGet).toHaveBeenCalledWith("/survey_responses");
       expect(result).toEqual(mockStatsData);
     });
+    it("fectches statistics with decimals values", async () => {
+      // Mock successful response
+      const mockStatsData = {
+        total_responses: 100,
+        average_stress_level: 3.5,
+      };
+      mockGet.mockResolvedValue({ data: mockStatsData });
 
+      // Call the function - with a specific implementation for this test
+      getAggregateStats.mockImplementation(async () => {
+        try {
+          const response = await axios.create().get("/survey_responses");
+          return response.data;
+        } catch (error) {
+          console.error("Error:", error);
+          throw error;
+        }
+      });
+
+      const result = await getAggregateStats();
+
+      // Verify results
+      expect(mockGet).toHaveBeenCalledWith("/survey_responses");
+      expect(result).toEqual(mockStatsData);
+    });
     it("handles error responses", async () => {
       // Mock error response
       const errorResponse = {
@@ -246,6 +270,191 @@ describe("API Functions", () => {
       await expect(submitSurveyResponse(surveyData)).rejects.toThrow(
         "An unexpected error occurred"
       );
+    });
+    it("handles empty response data", async () => {
+      // Mock empty response
+      const emptyResponse = { data: null };
+      mockPost.mockResolvedValue(emptyResponse);
+
+      // Set up implementation
+      submitSurveyResponse.mockImplementation(
+        async (surveyData: SurveyResponse) => {
+          try {
+            const response = await axios.create().post("/survey_responses", {
+              survey_response: surveyData,
+            });
+            return response.data;
+          } catch (error) {
+            console.error("Error:", error);
+            throw error;
+          }
+        }
+      );
+
+      // Test data
+      const surveyData: SurveyResponse = {
+        today_feeling: "Good",
+        stress_level: 3,
+        comments: "Test comment",
+      };
+
+      // Call the function
+      const result = await submitSurveyResponse(surveyData);
+
+      // Verify results
+      expect(mockPost).toHaveBeenCalledWith("/survey_responses", {
+        survey_response: surveyData,
+      });
+      expect(result).toEqual(emptyResponse.data);
+    });
+    it("handles network errors", async () => {
+      // Mock network error
+      const networkError = new Error("Network Error");
+      mockPost.mockRejectedValue(networkError);
+      (axios.isAxiosError as unknown as jest.Mock).mockReturnValue(false);
+
+      // Set up implementation
+      submitSurveyResponse.mockImplementation(
+        async (surveyData: SurveyResponse) => {
+          try {
+            const response = await axios.create().post("/survey_responses", {
+              survey_response: surveyData,
+            });
+            return response.data;
+          } catch (error) {
+            if (axios.isAxiosError(error) && error.response) {
+              return error.response.data;
+            }
+            throw new Error("An unexpected error occurred");
+          }
+        }
+      );
+
+      // Test data
+      const surveyData: SurveyResponse = {
+        today_feeling: "Good",
+        stress_level: 3,
+        comments: "Test comment",
+      };
+
+      // Call the function
+      await expect(submitSurveyResponse(surveyData)).rejects.toThrow(
+        "An unexpected error occurred"
+      );
+    });
+    it("handles invalid data format", async () => {
+      // Mock successful response
+      const mockApiResponse = { success: false };
+      mockPost.mockResolvedValue({ data: mockApiResponse });
+
+      // Set up implementation
+      submitSurveyResponse.mockImplementation(
+        async (surveyData: SurveyResponse) => {
+          try {
+            const response = await axios.create().post("/survey_responses", {
+              survey_response: surveyData,
+            });
+            return response.data;
+          } catch (error) {
+            console.error("Error:", error);
+            throw error;
+          }
+        }
+      );
+
+      // Test data with invalid format
+      const invalidSurveyData = {
+        today_feeling: "Good",
+        stress_level: "High", // Invalid type
+        comments: "Test comment",
+      };
+
+      // Call the function
+      const result = await submitSurveyResponse(invalidSurveyData);
+
+      // Verify results
+      expect(mockPost).toHaveBeenCalledWith("/survey_responses", {
+        survey_response: invalidSurveyData,
+      });
+      expect(result).toEqual(mockApiResponse);
+    });
+    it("handles missing required fields", async () => {
+      // Mock successful response
+      const mockApiResponse = { success: false };
+      mockPost.mockResolvedValue({ data: mockApiResponse });
+
+      // Set up implementation
+      submitSurveyResponse.mockImplementation(
+        async (surveyData: SurveyResponse) => {
+          try {
+            const response = await axios.create().post("/survey_responses", {
+              survey_response: surveyData,
+            });
+            return response.data;
+          } catch (error) {
+            console.error("Error:", error);
+            throw error;
+          }
+        }
+      );
+
+      // Test data with missing required fields
+      const incompleteSurveyData = {
+        today_feeling: "Good",
+        comments: "Test comment",
+      };
+
+      // Call the function
+      const result = await submitSurveyResponse(incompleteSurveyData);
+
+      // Verify results
+      expect(mockPost).toHaveBeenCalledWith("/survey_responses", {
+        survey_response: incompleteSurveyData,
+      });
+      expect(result).toEqual(mockApiResponse);
+    });
+    it("handles server errors", async () => {
+      // Mock server error response
+      const serverErrorResponse = {
+        data: { error: "Server error" },
+      };
+      const axiosError = new Error("API Error");
+      Object.assign(axiosError, {
+        response: serverErrorResponse,
+      });
+
+      mockPost.mockRejectedValue(axiosError);
+      (axios.isAxiosError as unknown as jest.Mock).mockReturnValue(true);
+
+      // Set up implementation
+      submitSurveyResponse.mockImplementation(
+        async (surveyData: SurveyResponse) => {
+          try {
+            const response = await axios.create().post("/survey_responses", {
+              survey_response: surveyData,
+            });
+            return response.data;
+          } catch (error) {
+            if (axios.isAxiosError(error) && error.response) {
+              return error.response.data;
+            }
+            throw new Error("An unexpected error occurred");
+          }
+        }
+      );
+
+      // Test data
+      const surveyData: SurveyResponse = {
+        today_feeling: "Good",
+        stress_level: 3,
+        comments: "Test comment",
+      };
+
+      // Call the function
+      const result = await submitSurveyResponse(surveyData);
+
+      // Verify results
+      expect(result).toEqual(serverErrorResponse.data);
     });
   });
 });
