@@ -108,3 +108,6 @@ updated_at: "2023-05-15 10:30:00"
 respondent_id: "AES-256-GCM:Jw7nL+p2xKfRb6TgVcPsA9EiY8mZuQtX3D5vBaH="
 respondent_id_bidx: "e8dc057914c3c193168c76a6ad4c5583"
 ```
+
+
+![image](https://github.com/user-attachments/assets/e9229dbc-5db1-4403-a2f3-8a65d7e58728)
